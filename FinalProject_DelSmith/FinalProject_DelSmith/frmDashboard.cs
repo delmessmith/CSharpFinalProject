@@ -10,17 +10,12 @@ using System.Windows.Forms;
 
 namespace FinalProject_DelSmith
 {
-    public partial class frmLogin : Form
+    public partial class frmDashboard : Form
     {
-        public frmLogin()
+        public frmDashboard()
         {
             InitializeComponent();
         }
 
-        private void Login_Click(object sender, EventArgs e)
-        {
-            frmDashboard Dashboard = new frmDashboard();
-            Dashboard.Show();
-        }
     }
 }
