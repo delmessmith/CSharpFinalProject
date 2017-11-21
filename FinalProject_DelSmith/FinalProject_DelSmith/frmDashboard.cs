@@ -17,5 +17,10 @@ namespace FinalProject_DelSmith
             InitializeComponent();
         }
 
+        private void mnuViewAll_Click(object sender, EventArgs e)
+        {
+            frmViewAllServices viewAllServices = new frmViewAllServices();
+            viewAllServices.ShowDialog();
+        }
     }
 }
