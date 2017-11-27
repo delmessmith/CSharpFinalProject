@@ -30,10 +30,6 @@ namespace FinalProject_DelSmith {
         
         private ServicesDataTable tableServices;
         
-        private global::System.Data.DataRelation relationFK_Services_ToTable;
-        
-        private global::System.Data.DataRelation relationFK_Services_ToTable_1;
-        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -246,8 +242,6 @@ namespace FinalProject_DelSmith {
                     this.tableServices.InitVars();
                 }
             }
-            this.relationFK_Services_ToTable = this.Relations["FK_Services_ToTable"];
-            this.relationFK_Services_ToTable_1 = this.Relations["FK_Services_ToTable_1"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -264,14 +258,6 @@ namespace FinalProject_DelSmith {
             base.Tables.Add(this.tableUsernames);
             this.tableServices = new ServicesDataTable();
             base.Tables.Add(this.tableServices);
-            this.relationFK_Services_ToTable = new global::System.Data.DataRelation("FK_Services_ToTable", new global::System.Data.DataColumn[] {
-                        this.tableVehicles.VehicleIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableServices.VehicleIDColumn}, false);
-            this.Relations.Add(this.relationFK_Services_ToTable);
-            this.relationFK_Services_ToTable_1 = new global::System.Data.DataRelation("FK_Services_ToTable_1", new global::System.Data.DataColumn[] {
-                        this.tableUsernames.UsernameColumn}, new global::System.Data.DataColumn[] {
-                        this.tableServices.UsernameColumn}, false);
-            this.Relations.Add(this.relationFK_Services_ToTable_1);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -960,23 +946,25 @@ namespace FinalProject_DelSmith {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class ServicesDataTable : global::System.Data.TypedTableBase<ServicesRow> {
             
-            private global::System.Data.DataColumn columnServiceId;
+            private global::System.Data.DataColumn columnService_ID;
             
-            private global::System.Data.DataColumn columnServiceDescription;
+            private global::System.Data.DataColumn columnDescription;
             
-            private global::System.Data.DataColumn columnVehicleID;
+            private global::System.Data.DataColumn columnVehicle_ID;
             
-            private global::System.Data.DataColumn columnServiceDate;
+            private global::System.Data.DataColumn columnVehicle;
             
-            private global::System.Data.DataColumn columnServiceMiles;
+            private global::System.Data.DataColumn columnDate;
             
-            private global::System.Data.DataColumn columnNextServiceDate;
+            private global::System.Data.DataColumn columnMiles;
             
-            private global::System.Data.DataColumn columnNextServiceMiles;
+            private global::System.Data.DataColumn columnNext_Service_Date;
             
-            private global::System.Data.DataColumn columnUsername;
+            private global::System.Data.DataColumn columnNext_Service_Miles;
             
-            private global::System.Data.DataColumn columnServiceNotes;
+            private global::System.Data.DataColumn columnEntered_By;
+            
+            private global::System.Data.DataColumn columnNotes;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1013,73 +1001,81 @@ namespace FinalProject_DelSmith {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ServiceIdColumn {
+            public global::System.Data.DataColumn Service_IDColumn {
                 get {
-                    return this.columnServiceId;
+                    return this.columnService_ID;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ServiceDescriptionColumn {
+            public global::System.Data.DataColumn DescriptionColumn {
                 get {
-                    return this.columnServiceDescription;
+                    return this.columnDescription;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn VehicleIDColumn {
+            public global::System.Data.DataColumn Vehicle_IDColumn {
                 get {
-                    return this.columnVehicleID;
+                    return this.columnVehicle_ID;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ServiceDateColumn {
+            public global::System.Data.DataColumn VehicleColumn {
                 get {
-                    return this.columnServiceDate;
+                    return this.columnVehicle;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ServiceMilesColumn {
+            public global::System.Data.DataColumn DateColumn {
                 get {
-                    return this.columnServiceMiles;
+                    return this.columnDate;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NextServiceDateColumn {
+            public global::System.Data.DataColumn MilesColumn {
                 get {
-                    return this.columnNextServiceDate;
+                    return this.columnMiles;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NextServiceMilesColumn {
+            public global::System.Data.DataColumn Next_Service_DateColumn {
                 get {
-                    return this.columnNextServiceMiles;
+                    return this.columnNext_Service_Date;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn UsernameColumn {
+            public global::System.Data.DataColumn Next_Service_MilesColumn {
                 get {
-                    return this.columnUsername;
+                    return this.columnNext_Service_Miles;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ServiceNotesColumn {
+            public global::System.Data.DataColumn Entered_ByColumn {
                 get {
-                    return this.columnServiceNotes;
+                    return this.columnEntered_By;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NotesColumn {
+                get {
+                    return this.columnNotes;
                 }
             }
             
@@ -1120,24 +1116,19 @@ namespace FinalProject_DelSmith {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ServicesRow AddServicesRow(string ServiceDescription, VehiclesRow parentVehiclesRowByFK_Services_ToTable, System.DateTime ServiceDate, int ServiceMiles, System.DateTime NextServiceDate, int NextServiceMiles, UsernamesRow parentUsernamesRowByFK_Services_ToTable_1, string ServiceNotes) {
+            public ServicesRow AddServicesRow(string Description, int Vehicle_ID, string Vehicle, System.DateTime Date, int Miles, System.DateTime Next_Service_Date, int Next_Service_Miles, string Entered_By, string Notes) {
                 ServicesRow rowServicesRow = ((ServicesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        ServiceDescription,
-                        null,
-                        ServiceDate,
-                        ServiceMiles,
-                        NextServiceDate,
-                        NextServiceMiles,
-                        null,
-                        ServiceNotes};
-                if ((parentVehiclesRowByFK_Services_ToTable != null)) {
-                    columnValuesArray[2] = parentVehiclesRowByFK_Services_ToTable[0];
-                }
-                if ((parentUsernamesRowByFK_Services_ToTable_1 != null)) {
-                    columnValuesArray[7] = parentUsernamesRowByFK_Services_ToTable_1[0];
-                }
+                        Description,
+                        Vehicle_ID,
+                        Vehicle,
+                        Date,
+                        Miles,
+                        Next_Service_Date,
+                        Next_Service_Miles,
+                        Entered_By,
+                        Notes};
                 rowServicesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowServicesRow);
                 return rowServicesRow;
@@ -1145,9 +1136,9 @@ namespace FinalProject_DelSmith {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ServicesRow FindByServiceId(int ServiceId) {
+            public ServicesRow FindByService_ID(int Service_ID) {
                 return ((ServicesRow)(this.Rows.Find(new object[] {
-                            ServiceId})));
+                            Service_ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1167,56 +1158,61 @@ namespace FinalProject_DelSmith {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnServiceId = base.Columns["ServiceId"];
-                this.columnServiceDescription = base.Columns["ServiceDescription"];
-                this.columnVehicleID = base.Columns["VehicleID"];
-                this.columnServiceDate = base.Columns["ServiceDate"];
-                this.columnServiceMiles = base.Columns["ServiceMiles"];
-                this.columnNextServiceDate = base.Columns["NextServiceDate"];
-                this.columnNextServiceMiles = base.Columns["NextServiceMiles"];
-                this.columnUsername = base.Columns["Username"];
-                this.columnServiceNotes = base.Columns["ServiceNotes"];
+                this.columnService_ID = base.Columns["Service ID"];
+                this.columnDescription = base.Columns["Description"];
+                this.columnVehicle_ID = base.Columns["Vehicle ID"];
+                this.columnVehicle = base.Columns["Vehicle"];
+                this.columnDate = base.Columns["Date"];
+                this.columnMiles = base.Columns["Miles"];
+                this.columnNext_Service_Date = base.Columns["Next Service Date"];
+                this.columnNext_Service_Miles = base.Columns["Next Service Miles"];
+                this.columnEntered_By = base.Columns["Entered By"];
+                this.columnNotes = base.Columns["Notes"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnServiceId = new global::System.Data.DataColumn("ServiceId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnServiceId);
-                this.columnServiceDescription = new global::System.Data.DataColumn("ServiceDescription", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnServiceDescription);
-                this.columnVehicleID = new global::System.Data.DataColumn("VehicleID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnVehicleID);
-                this.columnServiceDate = new global::System.Data.DataColumn("ServiceDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnServiceDate);
-                this.columnServiceMiles = new global::System.Data.DataColumn("ServiceMiles", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnServiceMiles);
-                this.columnNextServiceDate = new global::System.Data.DataColumn("NextServiceDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNextServiceDate);
-                this.columnNextServiceMiles = new global::System.Data.DataColumn("NextServiceMiles", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNextServiceMiles);
-                this.columnUsername = new global::System.Data.DataColumn("Username", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnUsername);
-                this.columnServiceNotes = new global::System.Data.DataColumn("ServiceNotes", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnServiceNotes);
+                this.columnService_ID = new global::System.Data.DataColumn("Service ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnService_ID);
+                this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescription);
+                this.columnVehicle_ID = new global::System.Data.DataColumn("Vehicle ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVehicle_ID);
+                this.columnVehicle = new global::System.Data.DataColumn("Vehicle", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVehicle);
+                this.columnDate = new global::System.Data.DataColumn("Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDate);
+                this.columnMiles = new global::System.Data.DataColumn("Miles", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMiles);
+                this.columnNext_Service_Date = new global::System.Data.DataColumn("Next Service Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNext_Service_Date);
+                this.columnNext_Service_Miles = new global::System.Data.DataColumn("Next Service Miles", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNext_Service_Miles);
+                this.columnEntered_By = new global::System.Data.DataColumn("Entered By", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEntered_By);
+                this.columnNotes = new global::System.Data.DataColumn("Notes", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNotes);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnServiceId}, true));
-                this.columnServiceId.AutoIncrement = true;
-                this.columnServiceId.AutoIncrementSeed = -1;
-                this.columnServiceId.AutoIncrementStep = -1;
-                this.columnServiceId.AllowDBNull = false;
-                this.columnServiceId.ReadOnly = true;
-                this.columnServiceId.Unique = true;
-                this.columnServiceDescription.AllowDBNull = false;
-                this.columnServiceDescription.MaxLength = 50;
-                this.columnVehicleID.AllowDBNull = false;
-                this.columnServiceDate.AllowDBNull = false;
-                this.columnServiceMiles.AllowDBNull = false;
-                this.columnNextServiceDate.AllowDBNull = false;
-                this.columnNextServiceMiles.AllowDBNull = false;
-                this.columnUsername.AllowDBNull = false;
-                this.columnUsername.MaxLength = 50;
-                this.columnServiceNotes.MaxLength = 500;
+                                this.columnService_ID}, true));
+                this.columnService_ID.AutoIncrement = true;
+                this.columnService_ID.AutoIncrementSeed = -1;
+                this.columnService_ID.AutoIncrementStep = -1;
+                this.columnService_ID.AllowDBNull = false;
+                this.columnService_ID.ReadOnly = true;
+                this.columnService_ID.Unique = true;
+                this.columnDescription.AllowDBNull = false;
+                this.columnDescription.MaxLength = 50;
+                this.columnVehicle_ID.AllowDBNull = false;
+                this.columnVehicle.AllowDBNull = false;
+                this.columnVehicle.MaxLength = 50;
+                this.columnDate.AllowDBNull = false;
+                this.columnMiles.AllowDBNull = false;
+                this.columnNext_Service_Date.AllowDBNull = false;
+                this.columnNext_Service_Miles.AllowDBNull = false;
+                this.columnEntered_By.AllowDBNull = false;
+                this.columnEntered_By.MaxLength = 50;
+                this.columnNotes.MaxLength = 500;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1400,17 +1396,6 @@ namespace FinalProject_DelSmith {
                     this[this.tableVehicles.VehicleYearColumn] = value;
                 }
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ServicesRow[] GetServicesRows() {
-                if ((this.Table.ChildRelations["FK_Services_ToTable"] == null)) {
-                    return new ServicesRow[0];
-                }
-                else {
-                    return ((ServicesRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Services_ToTable"])));
-                }
-            }
         }
         
         /// <summary>
@@ -1459,17 +1444,6 @@ namespace FinalProject_DelSmith {
                     this[this.tableUsernames.RoleColumn] = value;
                 }
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ServicesRow[] GetServicesRows() {
-                if ((this.Table.ChildRelations["FK_Services_ToTable_1"] == null)) {
-                    return new ServicesRow[0];
-                }
-                else {
-                    return ((ServicesRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Services_ToTable_1"])));
-                }
-            }
         }
         
         /// <summary>
@@ -1488,140 +1462,129 @@ namespace FinalProject_DelSmith {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int ServiceId {
+            public int Service_ID {
                 get {
-                    return ((int)(this[this.tableServices.ServiceIdColumn]));
+                    return ((int)(this[this.tableServices.Service_IDColumn]));
                 }
                 set {
-                    this[this.tableServices.ServiceIdColumn] = value;
+                    this[this.tableServices.Service_IDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ServiceDescription {
+            public string Description {
                 get {
-                    return ((string)(this[this.tableServices.ServiceDescriptionColumn]));
+                    return ((string)(this[this.tableServices.DescriptionColumn]));
                 }
                 set {
-                    this[this.tableServices.ServiceDescriptionColumn] = value;
+                    this[this.tableServices.DescriptionColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int VehicleID {
+            public int Vehicle_ID {
                 get {
-                    return ((int)(this[this.tableServices.VehicleIDColumn]));
+                    return ((int)(this[this.tableServices.Vehicle_IDColumn]));
                 }
                 set {
-                    this[this.tableServices.VehicleIDColumn] = value;
+                    this[this.tableServices.Vehicle_IDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime ServiceDate {
+            public string Vehicle {
                 get {
-                    return ((global::System.DateTime)(this[this.tableServices.ServiceDateColumn]));
+                    return ((string)(this[this.tableServices.VehicleColumn]));
                 }
                 set {
-                    this[this.tableServices.ServiceDateColumn] = value;
+                    this[this.tableServices.VehicleColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int ServiceMiles {
+            public System.DateTime Date {
                 get {
-                    return ((int)(this[this.tableServices.ServiceMilesColumn]));
+                    return ((global::System.DateTime)(this[this.tableServices.DateColumn]));
                 }
                 set {
-                    this[this.tableServices.ServiceMilesColumn] = value;
+                    this[this.tableServices.DateColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime NextServiceDate {
+            public int Miles {
                 get {
-                    return ((global::System.DateTime)(this[this.tableServices.NextServiceDateColumn]));
+                    return ((int)(this[this.tableServices.MilesColumn]));
                 }
                 set {
-                    this[this.tableServices.NextServiceDateColumn] = value;
+                    this[this.tableServices.MilesColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int NextServiceMiles {
+            public System.DateTime Next_Service_Date {
                 get {
-                    return ((int)(this[this.tableServices.NextServiceMilesColumn]));
+                    return ((global::System.DateTime)(this[this.tableServices.Next_Service_DateColumn]));
                 }
                 set {
-                    this[this.tableServices.NextServiceMilesColumn] = value;
+                    this[this.tableServices.Next_Service_DateColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Username {
+            public int Next_Service_Miles {
                 get {
-                    return ((string)(this[this.tableServices.UsernameColumn]));
+                    return ((int)(this[this.tableServices.Next_Service_MilesColumn]));
                 }
                 set {
-                    this[this.tableServices.UsernameColumn] = value;
+                    this[this.tableServices.Next_Service_MilesColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ServiceNotes {
+            public string Entered_By {
+                get {
+                    return ((string)(this[this.tableServices.Entered_ByColumn]));
+                }
+                set {
+                    this[this.tableServices.Entered_ByColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Notes {
                 get {
                     try {
-                        return ((string)(this[this.tableServices.ServiceNotesColumn]));
+                        return ((string)(this[this.tableServices.NotesColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ServiceNotes\' in table \'Services\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Notes\' in table \'Services\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableServices.ServiceNotesColumn] = value;
+                    this[this.tableServices.NotesColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public VehiclesRow VehiclesRow {
-                get {
-                    return ((VehiclesRow)(this.GetParentRow(this.Table.ParentRelations["FK_Services_ToTable"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Services_ToTable"]);
-                }
+            public bool IsNotesNull() {
+                return this.IsNull(this.tableServices.NotesColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public UsernamesRow UsernamesRow {
-                get {
-                    return ((UsernamesRow)(this.GetParentRow(this.Table.ParentRelations["FK_Services_ToTable_1"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Services_ToTable_1"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsServiceNotesNull() {
-                return this.IsNull(this.tableServices.ServiceNotesColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetServiceNotesNull() {
-                this[this.tableServices.ServiceNotesColumn] = global::System.Convert.DBNull;
+            public void SetNotesNull() {
+                this[this.tableServices.NotesColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2601,15 +2564,16 @@ SELECT Username, Password, Role FROM Usernames WHERE (Username = @Username)";
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Services";
-            tableMapping.ColumnMappings.Add("ServiceId", "ServiceId");
-            tableMapping.ColumnMappings.Add("ServiceDescription", "ServiceDescription");
-            tableMapping.ColumnMappings.Add("VehicleID", "VehicleID");
-            tableMapping.ColumnMappings.Add("ServiceDate", "ServiceDate");
-            tableMapping.ColumnMappings.Add("ServiceMiles", "ServiceMiles");
-            tableMapping.ColumnMappings.Add("NextServiceDate", "NextServiceDate");
-            tableMapping.ColumnMappings.Add("NextServiceMiles", "NextServiceMiles");
-            tableMapping.ColumnMappings.Add("Username", "Username");
-            tableMapping.ColumnMappings.Add("ServiceNotes", "ServiceNotes");
+            tableMapping.ColumnMappings.Add("Service ID", "Service ID");
+            tableMapping.ColumnMappings.Add("Description", "Description");
+            tableMapping.ColumnMappings.Add("Vehicle ID", "Vehicle ID");
+            tableMapping.ColumnMappings.Add("Vehicle", "Vehicle");
+            tableMapping.ColumnMappings.Add("Date", "Date");
+            tableMapping.ColumnMappings.Add("Miles", "Miles");
+            tableMapping.ColumnMappings.Add("Next Service Date", "Next Service Date");
+            tableMapping.ColumnMappings.Add("Next Service Miles", "Next Service Miles");
+            tableMapping.ColumnMappings.Add("Entered By", "Entered By");
+            tableMapping.ColumnMappings.Add("Notes", "Notes");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -2674,12 +2638,19 @@ SELECT ServiceId, ServiceDescription, VehicleID, ServiceDate, ServiceMiles, Next
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ServiceId, ServiceDescription, VehicleID, ServiceDate, ServiceMiles, NextS" +
                 "erviceDate, NextServiceMiles, Username, ServiceNotes FROM dbo.Services";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        Services.ServiceId AS 'Service ID', Services.ServiceDescription AS Description, Services.VehicleID AS 'Vehicle ID', Vehicles.VehicleModel AS Vehicle, Services.ServiceDate AS Date, Services.ServiceMiles AS 'Miles', 
+                         Services.NextServiceDate AS 'Next Service Date', Services.NextServiceMiles AS 'Next Service Miles', Services.Username AS 'Entered By', Services.ServiceNotes AS Notes
+FROM            Services INNER JOIN
+                         Vehicles ON Services.VehicleID = Vehicles.VehicleID";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2704,6 +2675,19 @@ SELECT ServiceId, ServiceDescription, VehicleID, ServiceDate, ServiceMiles, Next
             ServicesDataSet.ServicesDataTable dataTable = new ServicesDataSet.ServicesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillAll(ServicesDataSet.ServicesDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2913,31 +2897,6 @@ SELECT ServiceId, ServiceDescription, VehicleID, ServiceDate, ServiceMiles, Next
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string ServiceDescription, 
-                    int VehicleID, 
-                    System.DateTime ServiceDate, 
-                    int ServiceMiles, 
-                    System.DateTime NextServiceDate, 
-                    int NextServiceMiles, 
-                    string Username, 
-                    string ServiceNotes, 
-                    int Original_ServiceId, 
-                    string Original_ServiceDescription, 
-                    int Original_VehicleID, 
-                    System.DateTime Original_ServiceDate, 
-                    int Original_ServiceMiles, 
-                    System.DateTime Original_NextServiceDate, 
-                    int Original_NextServiceMiles, 
-                    string Original_Username, 
-                    string Original_ServiceNotes) {
-            return this.Update(ServiceDescription, VehicleID, ServiceDate, ServiceMiles, NextServiceDate, NextServiceMiles, Username, ServiceNotes, Original_ServiceId, Original_ServiceDescription, Original_VehicleID, Original_ServiceDate, Original_ServiceMiles, Original_NextServiceDate, Original_NextServiceMiles, Original_Username, Original_ServiceNotes, Original_ServiceId);
         }
     }
     
