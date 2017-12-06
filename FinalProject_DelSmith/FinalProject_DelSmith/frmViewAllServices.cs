@@ -20,7 +20,7 @@ namespace FinalProject_DelSmith
         private void frmViewAllServices_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'servicesDataSet.Services' table. You can move, or remove it, as needed.
-            this.servicesTableAdapter.FillAll(this.servicesDataSet.Services);
+            this.servicesTableAdapter.Fill(this.servicesDataSet.Services);
 
         }
     }

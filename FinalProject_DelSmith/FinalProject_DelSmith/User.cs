@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FinalProject_DelSmith
 {
-    class User
+    public class User
     {
         private String mUsername;
         private String mPassword;
