@@ -66,6 +66,18 @@
     <Compile Include="frmDashboard.Designer.cs">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmNewLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNewLogin.Designer.cs">
+      <DependentUpon>frmNewLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmViewAllLogins.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewAllLogins.Designer.cs">
+      <DependentUpon>frmViewAllLogins.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmViewAllServices.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +99,12 @@
     <Compile Include="Vehicle.cs" />
     <EmbeddedResource Include="frmDashboard.resx">
       <DependentUpon>frmDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNewLogin.resx">
+      <DependentUpon>frmNewLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViewAllLogins.resx">
+      <DependentUpon>frmViewAllLogins.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmViewAllServices.resx">
       <DependentUpon>frmViewAllServices.cs</DependentUpon>

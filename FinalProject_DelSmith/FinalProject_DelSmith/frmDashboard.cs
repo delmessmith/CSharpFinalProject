@@ -63,7 +63,8 @@ namespace FinalProject_DelSmith
                         }
                     }
 
-                    MessageBox.Show(currentUser.Username + ":" + currentUser.Password + ":" + currentUser.Role);
+                    MessageBox.Show("Hello " + currentUser.Username + "! Welcome back!" + "\n" +
+                        currentUser.Username + ":" + currentUser.Password + ":" + currentUser.Role);
                 }
                 else if (loginAdapter.SearchUsername(loginAdapter.GetData(), username) > 0)
                 {
@@ -112,6 +113,34 @@ namespace FinalProject_DelSmith
         private void aboutUsToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void mnuLoginsViewAll_Click(object sender, EventArgs e)
+        {
+            if (currentUser.Role == "Admin" || currentUser.Role == "Manager")
+            {
+                frmViewAllLogins viewAllLogins = new frmViewAllLogins();
+                viewAllLogins.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("You do not have the proper permissions to view this. Please log in with an admin or " +
+                    "manager account.", "Invalid Account Type", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
+
+        private void mnuLoginsNew_Click(object sender, EventArgs e)
+        {
+            if (currentUser.Role == "Admin" || currentUser.Role == "Manager")
+            {
+                frmNewLogin newLogin = new frmNewLogin();
+                newLogin.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("You do not have the proper permissions to view this. Please log in with an Admin or " +
+                    "Manager account.", "Invalid Account Type", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
         }
     }
 }

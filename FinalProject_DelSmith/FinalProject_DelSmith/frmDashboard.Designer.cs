@@ -33,7 +33,7 @@
             this.mnuLoginsViewAll = new System.Windows.Forms.ToolStripMenuItem();
             this.loginsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuLoginsNew = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuEmployeesPayrollReport = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuEmployeesNewEntry = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuServicesViewAll = new System.Windows.Forms.ToolStripMenuItem();
             this.employeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFileExit = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,8 +67,9 @@
             // mnuLoginsViewAll
             // 
             this.mnuLoginsViewAll.Name = "mnuLoginsViewAll";
-            this.mnuLoginsViewAll.Size = new System.Drawing.Size(116, 22);
+            this.mnuLoginsViewAll.Size = new System.Drawing.Size(152, 22);
             this.mnuLoginsViewAll.Text = "View All";
+            this.mnuLoginsViewAll.Click += new System.EventHandler(this.mnuLoginsViewAll_Click);
             // 
             // loginsToolStripMenuItem
             // 
@@ -82,14 +83,15 @@
             // mnuLoginsNew
             // 
             this.mnuLoginsNew.Name = "mnuLoginsNew";
-            this.mnuLoginsNew.Size = new System.Drawing.Size(116, 22);
+            this.mnuLoginsNew.Size = new System.Drawing.Size(152, 22);
             this.mnuLoginsNew.Text = "New";
+            this.mnuLoginsNew.Click += new System.EventHandler(this.mnuLoginsNew_Click);
             // 
-            // mnuEmployeesPayrollReport
+            // mnuEmployeesNewEntry
             // 
-            this.mnuEmployeesPayrollReport.Name = "mnuEmployeesPayrollReport";
-            this.mnuEmployeesPayrollReport.Size = new System.Drawing.Size(152, 22);
-            this.mnuEmployeesPayrollReport.Text = "Payroll Report";
+            this.mnuEmployeesNewEntry.Name = "mnuEmployeesNewEntry";
+            this.mnuEmployeesNewEntry.Size = new System.Drawing.Size(152, 22);
+            this.mnuEmployeesNewEntry.Text = "New Entry";
             // 
             // mnuServicesViewAll
             // 
@@ -101,7 +103,7 @@
             // 
             this.employeesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuServicesViewAll,
-            this.mnuEmployeesPayrollReport});
+            this.mnuEmployeesNewEntry});
             this.employeesToolStripMenuItem.Name = "employeesToolStripMenuItem";
             this.employeesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.employeesToolStripMenuItem.Text = "Services";
@@ -296,7 +298,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuFileExit;
         private System.Windows.Forms.ToolStripMenuItem employeesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnuServicesViewAll;
-        private System.Windows.Forms.ToolStripMenuItem mnuEmployeesPayrollReport;
+        private System.Windows.Forms.ToolStripMenuItem mnuEmployeesNewEntry;
         private System.Windows.Forms.ToolStripMenuItem loginsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnuLoginsViewAll;
         private System.Windows.Forms.ToolStripMenuItem mnuLoginsNew;
