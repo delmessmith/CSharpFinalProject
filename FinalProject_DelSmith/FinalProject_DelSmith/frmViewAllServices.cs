@@ -100,8 +100,14 @@ namespace FinalProject_DelSmith
 
         private void mnuAdd_Click(object sender, EventArgs e)
         {
-            frmNewEntry newEntry = new frmNewEntry();
+            frmNewEntry newEntry = new frmNewEntry(currentUser, servicesAdapter);
             newEntry.ShowDialog();
+        }
+
+        private void frmViewAllServices_Activated(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'servicesDataSet.Services' table. You can move, or remove it, as needed.
+            this.servicesTableAdapter.Fill(this.servicesDataSet.Services);
         }
     }
 }

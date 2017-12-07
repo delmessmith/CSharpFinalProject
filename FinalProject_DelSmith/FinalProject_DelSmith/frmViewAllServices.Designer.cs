@@ -233,6 +233,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Name = "frmViewAllServices";
             this.Text = "View All Services";
+            this.Activated += new System.EventHandler(this.frmViewAllServices_Activated);
             this.Load += new System.EventHandler(this.frmViewAllServices_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
