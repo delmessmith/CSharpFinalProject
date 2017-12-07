@@ -16,19 +16,25 @@ namespace FinalProject_DelSmith
         private ServicesDataSetTableAdapters.UsernamesTableAdapter loginAdapter = new 
             ServicesDataSetTableAdapters.UsernamesTableAdapter();
 
-        public List<User> users = new List<User>();
-        public User currentUser;
+        private ServicesDataSetTableAdapters.VehiclesTableAdapter vehiclesAdapter = new
+            ServicesDataSetTableAdapters.VehiclesTableAdapter();
+
+        private List<User> users = new List<User>();
+        private List<Vehicle> vehicles = new List<Vehicle>();
+
+        public List<User> Users
+        {
+            get { return users; }
+            set { users = value; }
+        }
+
+        private static User currentUser;
 
         public frmDashboard()
         {
             InitializeComponent();
         }
 
-        private void mnuViewAll_Click(object sender, EventArgs e)
-        {
-            frmViewAllServices viewAllServices = new frmViewAllServices();
-            viewAllServices.ShowDialog();
-        }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -89,16 +95,19 @@ namespace FinalProject_DelSmith
                 User aUser = new User(r[0].ToString(), r[1].ToString(), r[2].ToString());
                 users.Add(aUser);
             }
+
+            //get vehicles from database and store them in the vehicles list
+            DataTable vehiclesTable = vehiclesAdapter.GetData();
+            foreach (DataRow r in logins.Rows)
+            {
+                Vehicle aVehicle = new Vehicle(int.Parse(r[0].ToString()), r[1].ToString(), r[2].ToString(), r[3].ToString());
+                vehicles.Add(aVehicle);
+            }
         }
 
         private void mnuFileExit_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void frmDashboard_Activated(object sender, EventArgs e)
-        {
-            
         }
 
         private void mnuFileLogout_Click(object sender, EventArgs e)
@@ -112,7 +121,8 @@ namespace FinalProject_DelSmith
 
         private void aboutUsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmAboutUs aboutUs = new frmAboutUs();
+            aboutUs.ShowDialog();
         }
 
         private void mnuLoginsViewAll_Click(object sender, EventArgs e)
@@ -141,6 +151,17 @@ namespace FinalProject_DelSmith
                 MessageBox.Show("You do not have the proper permissions to view this. Please log in with an Admin or " +
                     "Manager account.", "Invalid Account Type", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
+        }
+
+        private void mnuServicesViewAll_Click(object sender, EventArgs e)
+        {
+            frmViewAllServices viewAllServices = new frmViewAllServices(currentUser, vehicles);
+            viewAllServices.ShowDialog();
+        }
+
+        private void mnuEmployeesNewEntry_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

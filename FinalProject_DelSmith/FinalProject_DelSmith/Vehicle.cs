@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FinalProject_DelSmith
 {
-    class Vehicle
+    public class Vehicle
     {
         private int id;
         private String make;

@@ -15,17 +15,17 @@ namespace FinalProject_DelSmith
         private int serviceMiles;
         private DateTime nextServiceDate;
         private int nextServiceMiles;
-        private User enteredBy;
+        private String enteredBy;
         private String notes;
 
         public ServiceRecord(int serviceId, String description, int vehicleId, DateTime serviceDate, int serviceMiles,
-            DateTime nextServiceDate, int nextServiceMiles, User enteredBy, String notes)
+            DateTime nextServiceDate, int nextServiceMiles, String enteredBy, String notes)
         {
             this.serviceId = serviceId;
             this.description = description;
             this.vehicleId = vehicleId;
             this.serviceDate = serviceDate;
-            this.ServiceMiles = serviceMiles;
+            this.serviceMiles = serviceMiles;
             this.nextServiceDate = serviceDate;
             this.nextServiceMiles = nextServiceMiles;
             this.enteredBy = enteredBy;
@@ -61,7 +61,12 @@ namespace FinalProject_DelSmith
             set { ServiceMiles = value; }
         }
 
-        public User EnteredBy
+        public DateTime NextServiceDate
+        {
+            get { return nextServiceDate; }
+        }
+
+        public String EnteredBy
         {
             get { return enteredBy; }
             set { enteredBy = value; }
@@ -72,5 +77,6 @@ namespace FinalProject_DelSmith
             get { return notes; }
             set { notes = value; }
         }
+
     }
 }

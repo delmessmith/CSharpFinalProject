@@ -42,6 +42,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutUsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMain = new System.Windows.Forms.Panel();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
@@ -51,8 +53,6 @@
             this.panelLogin = new System.Windows.Forms.Panel();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutUsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.errProvider)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panelMain.SuspendLayout();
@@ -67,7 +67,7 @@
             // mnuLoginsViewAll
             // 
             this.mnuLoginsViewAll.Name = "mnuLoginsViewAll";
-            this.mnuLoginsViewAll.Size = new System.Drawing.Size(152, 22);
+            this.mnuLoginsViewAll.Size = new System.Drawing.Size(116, 22);
             this.mnuLoginsViewAll.Text = "View All";
             this.mnuLoginsViewAll.Click += new System.EventHandler(this.mnuLoginsViewAll_Click);
             // 
@@ -83,7 +83,7 @@
             // mnuLoginsNew
             // 
             this.mnuLoginsNew.Name = "mnuLoginsNew";
-            this.mnuLoginsNew.Size = new System.Drawing.Size(152, 22);
+            this.mnuLoginsNew.Size = new System.Drawing.Size(116, 22);
             this.mnuLoginsNew.Text = "New";
             this.mnuLoginsNew.Click += new System.EventHandler(this.mnuLoginsNew_Click);
             // 
@@ -92,12 +92,14 @@
             this.mnuEmployeesNewEntry.Name = "mnuEmployeesNewEntry";
             this.mnuEmployeesNewEntry.Size = new System.Drawing.Size(152, 22);
             this.mnuEmployeesNewEntry.Text = "New Entry";
+            this.mnuEmployeesNewEntry.Click += new System.EventHandler(this.mnuEmployeesNewEntry_Click);
             // 
             // mnuServicesViewAll
             // 
             this.mnuServicesViewAll.Name = "mnuServicesViewAll";
             this.mnuServicesViewAll.Size = new System.Drawing.Size(152, 22);
             this.mnuServicesViewAll.Text = "View All";
+            this.mnuServicesViewAll.Click += new System.EventHandler(this.mnuServicesViewAll_Click);
             // 
             // employeesToolStripMenuItem
             // 
@@ -111,14 +113,14 @@
             // mnuFileExit
             // 
             this.mnuFileExit.Name = "mnuFileExit";
-            this.mnuFileExit.Size = new System.Drawing.Size(152, 22);
+            this.mnuFileExit.Size = new System.Drawing.Size(112, 22);
             this.mnuFileExit.Text = "Exit";
             this.mnuFileExit.Click += new System.EventHandler(this.mnuFileExit_Click);
             // 
             // mnuFileLogout
             // 
             this.mnuFileLogout.Name = "mnuFileLogout";
-            this.mnuFileLogout.Size = new System.Drawing.Size(152, 22);
+            this.mnuFileLogout.Size = new System.Drawing.Size(112, 22);
             this.mnuFileLogout.Text = "Logout";
             this.mnuFileLogout.Click += new System.EventHandler(this.mnuFileLogout_Click);
             // 
@@ -164,6 +166,21 @@
             this.menuStrip1.Size = new System.Drawing.Size(334, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutUsToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // aboutUsToolStripMenuItem
+            // 
+            this.aboutUsToolStripMenuItem.Name = "aboutUsToolStripMenuItem";
+            this.aboutUsToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.aboutUsToolStripMenuItem.Text = "About Us";
+            this.aboutUsToolStripMenuItem.Click += new System.EventHandler(this.aboutUsToolStripMenuItem_Click);
             // 
             // panelMain
             // 
@@ -245,21 +262,6 @@
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutUsToolStripMenuItem});
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
-            // 
-            // aboutUsToolStripMenuItem
-            // 
-            this.aboutUsToolStripMenuItem.Name = "aboutUsToolStripMenuItem";
-            this.aboutUsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.aboutUsToolStripMenuItem.Text = "About Us";
-            this.aboutUsToolStripMenuItem.Click += new System.EventHandler(this.aboutUsToolStripMenuItem_Click);
-            // 
             // frmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -270,7 +272,6 @@
             this.Controls.Add(this.statusStrip1);
             this.Name = "frmDashboard";
             this.Text = "Del\'s Service Log Dashboard";
-            this.Activated += new System.EventHandler(this.frmDashboard_Activated);
             this.Load += new System.EventHandler(this.frmDashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errProvider)).EndInit();
             this.menuStrip1.ResumeLayout(false);
