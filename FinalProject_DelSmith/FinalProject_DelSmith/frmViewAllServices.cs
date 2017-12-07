@@ -23,11 +23,10 @@ namespace FinalProject_DelSmith
         private List<ServiceRecord> serviceRecords = new List<ServiceRecord>();
         private List<Vehicle> vehicles;
 
-        public frmViewAllServices(User currentUser, List<Vehicle> vehicles)
+        public frmViewAllServices(User currentUser)
         {
             InitializeComponent();
             this.currentUser = currentUser;
-            this.vehicles = vehicles;
         }
 
         private void frmViewAllServices_Load(object sender, EventArgs e)
@@ -97,6 +96,12 @@ namespace FinalProject_DelSmith
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void mnuAdd_Click(object sender, EventArgs e)
+        {
+            frmNewEntry newEntry = new frmNewEntry();
+            newEntry.ShowDialog();
         }
     }
 }

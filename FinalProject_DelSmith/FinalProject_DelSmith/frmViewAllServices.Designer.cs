@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmViewAllServices));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btnClose = new System.Windows.Forms.ToolStripButton();
+            this.mnuClose = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.dgvEmployees = new System.Windows.Forms.DataGridView();
@@ -50,6 +50,7 @@
             this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serviceNotesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.servicesTableAdapter = new FinalProject_DelSmith.ServicesDataSetTableAdapters.ServicesTableAdapter();
+            this.mnuAdd = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
@@ -60,22 +61,24 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnClose});
+            this.mnuClose,
+            this.mnuAdd});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1130, 25);
             this.toolStrip1.TabIndex = 5;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // btnClose
+            // mnuClose
             // 
-            this.btnClose.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(40, 22);
-            this.btnClose.Text = "Close";
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.mnuClose.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.mnuClose.Image = ((System.Drawing.Image)(resources.GetObject("mnuClose.Image")));
+            this.mnuClose.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.mnuClose.Name = "mnuClose";
+            this.mnuClose.Size = new System.Drawing.Size(40, 22);
+            this.mnuClose.Text = "Close";
+            this.mnuClose.ToolTipText = "Close";
+            this.mnuClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // statusStrip1
             // 
@@ -209,6 +212,17 @@
             // 
             this.servicesTableAdapter.ClearBeforeFill = true;
             // 
+            // mnuAdd
+            // 
+            this.mnuAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.mnuAdd.Image = ((System.Drawing.Image)(resources.GetObject("mnuAdd.Image")));
+            this.mnuAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.mnuAdd.Name = "mnuAdd";
+            this.mnuAdd.Size = new System.Drawing.Size(33, 22);
+            this.mnuAdd.Text = "Add";
+            this.mnuAdd.ToolTipText = "Add";
+            this.mnuAdd.Click += new System.EventHandler(this.mnuAdd_Click);
+            // 
             // frmViewAllServices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -235,7 +249,7 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton btnClose;
+        private System.Windows.Forms.ToolStripButton mnuClose;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lblStatus;
         private System.Windows.Forms.DataGridView dgvEmployees;
@@ -254,5 +268,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nextServiceMilesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn serviceNotesDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.ToolStripButton mnuAdd;
     }
 }

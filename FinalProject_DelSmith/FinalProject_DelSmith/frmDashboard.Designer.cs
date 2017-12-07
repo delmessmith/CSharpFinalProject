@@ -92,7 +92,6 @@
             this.mnuEmployeesNewEntry.Name = "mnuEmployeesNewEntry";
             this.mnuEmployeesNewEntry.Size = new System.Drawing.Size(152, 22);
             this.mnuEmployeesNewEntry.Text = "New Entry";
-            this.mnuEmployeesNewEntry.Click += new System.EventHandler(this.mnuEmployeesNewEntry_Click);
             // 
             // mnuServicesViewAll
             // 

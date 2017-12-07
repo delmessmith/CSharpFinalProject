@@ -20,7 +20,6 @@ namespace FinalProject_DelSmith
             ServicesDataSetTableAdapters.VehiclesTableAdapter();
 
         private List<User> users = new List<User>();
-        private List<Vehicle> vehicles = new List<Vehicle>();
 
         public List<User> Users
         {
@@ -95,14 +94,6 @@ namespace FinalProject_DelSmith
                 User aUser = new User(r[0].ToString(), r[1].ToString(), r[2].ToString());
                 users.Add(aUser);
             }
-
-            //get vehicles from database and store them in the vehicles list
-            DataTable vehiclesTable = vehiclesAdapter.GetData();
-            foreach (DataRow r in logins.Rows)
-            {
-                Vehicle aVehicle = new Vehicle(int.Parse(r[0].ToString()), r[1].ToString(), r[2].ToString(), r[3].ToString());
-                vehicles.Add(aVehicle);
-            }
         }
 
         private void mnuFileExit_Click(object sender, EventArgs e)
@@ -155,13 +146,8 @@ namespace FinalProject_DelSmith
 
         private void mnuServicesViewAll_Click(object sender, EventArgs e)
         {
-            frmViewAllServices viewAllServices = new frmViewAllServices(currentUser, vehicles);
+            frmViewAllServices viewAllServices = new frmViewAllServices(currentUser);
             viewAllServices.ShowDialog();
-        }
-
-        private void mnuEmployeesNewEntry_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
